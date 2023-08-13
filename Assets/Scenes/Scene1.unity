@@ -588,8 +588,6 @@ MonoBehaviour:
   speed: 5
   height: 6.5
   mainCamera: {fileID: 0}
-  _line: {fileID: 1648418228}
-  _dis: {fileID: 0}
   layerMaskByBao:
     serializedVersion: 2
     m_Bits: 2
@@ -789,7 +787,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 56b8b4915cb3440f18584699d9c453fb, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 877a6c07ea7044f7587cb552469641d0, type: 2}
 --- !u!1 &2092017858
 GameObject:
   m_ObjectHideFlags: 0
