@@ -9,8 +9,6 @@ public class riMovement : MonoBehaviour
     public float height;
 
     public Camera mainCamera;
-    public LineRenderer _line;
-    public DistanceJoint2D _dis;
 
     private bool is_left = false;
     private bool is_down = true;
@@ -28,11 +26,11 @@ public class riMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         bc = GetComponent<CapsuleCollider2D>();
         mainCamera = Camera.main;
-        _dis = GetComponent<DistanceJoint2D>();
-        _line = GetComponent<LineRenderer>();
+        //_dis = GetComponent<DistanceJoint2D>();
+        //_line = GetComponent<LineRenderer>();
 
-        _dis.enabled = false;
-        _line.enabled = false;
+        //_dis.enabled = false;
+        //_line.enabled = false;
     }
 
     // Update is called once per frame
@@ -53,27 +51,27 @@ public class riMovement : MonoBehaviour
         {
             ChangeGravity();
         }
-        else if (Input.GetKeyDown(KeyCode.L))
-        {
-            Debug.Log("HEHE");
-            //Vector2 wirePos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 wirePos = new Vector2(-1.5f, 3.49f);
-            _line.SetPosition(0, wirePos);
-            _line.SetPosition(1, transform.position);
-            _dis.connectedAnchor = wirePos;
-            _dis.enabled = true;
-            _line.enabled = true;
-        }
-        else if (Input.GetKeyUp(KeyCode.L))
-        {
-            _dis.enabled = false;
-            _line.enabled = false;
-        }
+        //else if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    Debug.Log("HEHE");
+        //    //Vector2 wirePos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        //    Vector2 wirePos = new Vector2(-1.5f, 3.49f);
+        //    _line.SetPosition(0, wirePos);
+        //    _line.SetPosition(1, transform.position);
+        //    _dis.connectedAnchor = wirePos;
+        //    _dis.enabled = true;
+        //    _line.enabled = true;
+        //}
+        //else if (Input.GetKeyUp(KeyCode.L))
+        //{
+        //    _dis.enabled = false;
+        //    _line.enabled = false;
+        //}
 
-        if (_dis.enabled)
-        {
-            _line.SetPosition(1, transform.position);
-        }
+        //if (_dis.enabled)
+        //{
+        //    _line.SetPosition(1, transform.position);
+        //}
 
         Flip();
 
