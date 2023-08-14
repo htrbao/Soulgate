@@ -8,6 +8,8 @@ TagManager:
   - PushStone
   - PushGround
   - SwapStone
+  - Audio
+  - Friend
   layers:
   - Default
   - TransparentFX

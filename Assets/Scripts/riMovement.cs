@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,7 @@ public class riMovement : MonoBehaviour
 
 
     public Camera mainCamera;
+    //AudioManager audioManager;
 
     private bool is_left = false;
     private bool is_down = true;
@@ -26,6 +28,7 @@ public class riMovement : MonoBehaviour
     public Transform firePoint;
     public GameObject startVFX;
     public GameObject endVFX;
+    public GameObject riLight;
 
 
     private float stoneTime = 0.5f;
@@ -43,9 +46,12 @@ public class riMovement : MonoBehaviour
     private bool stone = false;
     private bool swap = false;
 
+    public GameObject Friend;
+
     private List<ParticleSystem> particles = new List<ParticleSystem>();
 
     // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -65,6 +71,7 @@ public class riMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        riLight.transform.position = new Vector3(rb.position.x, rb.position.y);
         left = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(left * speed * timeScale, rb.velocity.y * timeScale);
 
@@ -80,7 +87,7 @@ public class riMovement : MonoBehaviour
         {
             ChangeGravity();
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) || transform.position.y < -8.50)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -337,5 +344,9 @@ public class riMovement : MonoBehaviour
             }
         }
     }
-
+    private IEnumerator SpawnDelay()
+    {
+        yield return new WaitForSeconds(3);
+        Friend.SetActive(true);
+    }
 }
