@@ -3,7 +3,7 @@
 This is project in 3D Visualization and Game Development (CS427), VNU-HCMUS.
 
 ## Description
-- The story tells about a small fairy named Ri who is lost in the forest of the "Soulgate" spirits. This fairy uses her laser beam to interact with runes; There are 2 types of runes: Push Rune and Swap Rune, which help Ri interact with the environment. After overcoming various challenges, she will reunite with her chubby and adorable bird friend.
+- The story tells about a small fairy named Ri who is lost in the forest of the "Soulgate" spirits. This fairy uses her laser beam to interact with runes; There are 2 types of runes: Power Rune and Space Rune, which help Ri interact with the environment. After overcoming various challenges, she will reunite with her chubby and adorable bird friend.
 - Mission of the main character that cross the road and overcome obstacles as far as possible and collect as much coin to get the most points.
 - The further the player moves, the more challenging it is to player.
 ## Feature
@@ -16,6 +16,8 @@ This is project in 3D Visualization and Game Development (CS427), VNU-HCMUS.
 
 You just need to press the scroll keys: `A`; `W`; `S`; `D`; to make your character move `left`, `up`, `right`, `down`.
 Hold `left-mouse` to use Laser for interacting with Runes.
+- Power Rune;
+- Space Rune;
 
 ## Member
 
