@@ -4782,6 +4782,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1915026320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8265067416826752381, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
+  m_PrefabInstance: {fileID: 5055847417136133422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2039406591
 GameObject:
   m_ObjectHideFlags: 0
@@ -4995,6 +5000,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 433023232161575863, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
+      propertyPath: riLight
+      value: 
+      objectReference: {fileID: 1915026320}
+    - target: {fileID: 433023232161575863, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
       propertyPath: pushForce
       value: 3
       objectReference: {fileID: 0}
@@ -5045,14 +5054,6 @@ PrefabInstance:
     - target: {fileID: 500861431369023724, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6713750522955260635, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
-      propertyPath: orthographic size
-      value: 7.4666805
-      objectReference: {fileID: 0}
-    - target: {fileID: 7037379769626704797, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.09
       objectReference: {fileID: 0}
     - target: {fileID: 7666222804811240152, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
       propertyPath: m_Name
