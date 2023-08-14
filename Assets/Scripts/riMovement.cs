@@ -349,4 +349,9 @@ public class riMovement : MonoBehaviour
         yield return new WaitForSeconds(3);
         Friend.SetActive(true);
     }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
 }
