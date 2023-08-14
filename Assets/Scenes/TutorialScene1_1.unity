@@ -2169,6 +2169,11 @@ RectTransform:
   m_AnchoredPosition: {x: 7, y: 58}
   m_SizeDelta: {x: 241, y: 84}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &284264091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7666222804811240152, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
+  m_PrefabInstance: {fileID: 5055847417136133422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &322676256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2258,6 +2263,11 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 4825214099054847134, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
   m_PrefabInstance: {fileID: 5055847417136133422}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &324285100 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 500861431369023724, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
+  m_PrefabInstance: {fileID: 5055847417136133422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &335774727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,6 +2352,88 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &418314574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 418314575}
+  - component: {fileID: 418314576}
+  m_Layer: 0
+  m_Name: RiLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &418314575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418314574}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 28.519999, y: 0.8100002, z: -6.5454545}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 324285100}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &418314576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418314574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.78823537, g: 0.5529412, b: 0.5882353, a: 1}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000b30ad5b8
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0.3
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &476646255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2691,6 +2783,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &931410504
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6397798936526785551, guid: 1f5c5caa835ad4a14939e01a9ad86b28, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397798936526785551, guid: 1f5c5caa835ad4a14939e01a9ad86b28, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.050442
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397798936526785551, guid: 1f5c5caa835ad4a14939e01a9ad86b28, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.885629
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397798936526785551, guid: 1f5c5caa835ad4a14939e01a9ad86b28, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.879511
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397798936526785551, guid: 1f5c5caa835ad4a14939e01a9ad86b28, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397798936526785551, guid: 1f5c5caa835ad4a14939e01a9ad86b28, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397798936526785551, guid: 1f5c5caa835ad4a14939e01a9ad86b28, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397798936526785551, guid: 1f5c5caa835ad4a14939e01a9ad86b28, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397798936526785551, guid: 1f5c5caa835ad4a14939e01a9ad86b28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397798936526785551, guid: 1f5c5caa835ad4a14939e01a9ad86b28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397798936526785551, guid: 1f5c5caa835ad4a14939e01a9ad86b28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8447169555915474565, guid: 1f5c5caa835ad4a14939e01a9ad86b28, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f5c5caa835ad4a14939e01a9ad86b28, type: 3}
 --- !u!1 &955304788
 GameObject:
   m_ObjectHideFlags: 0
@@ -3092,6 +3245,7 @@ GameObject:
   - component: {fileID: 1053831067}
   - component: {fileID: 1053831069}
   - component: {fileID: 1053831068}
+  - component: {fileID: 1053831071}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3217,6 +3371,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1053831071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053831066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22b0d1c59e01431da565bc5562dc888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 284264091}
+  offset: 3
+  offsetSmoothing: 2
 --- !u!1 &1094592822
 GameObject:
   m_ObjectHideFlags: 0
@@ -5002,7 +5171,7 @@ PrefabInstance:
     - target: {fileID: 433023232161575863, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
       propertyPath: riLight
       value: 
-      objectReference: {fileID: 1915026320}
+      objectReference: {fileID: 418314574}
     - target: {fileID: 433023232161575863, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
       propertyPath: pushForce
       value: 3
@@ -5061,6 +5230,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 500861431369023724, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 418314575}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
