@@ -209,6 +209,7 @@ public class riMovement : MonoBehaviour
         timeScale = slowScale;
         rb.gravityScale = slowScale;
         firing = true;
+        stone = false;
         for (int i = 0; i < particles.Count; i++)
         {
             particles[i].Play();
@@ -252,7 +253,7 @@ public class riMovement : MonoBehaviour
                     {
                         Push(direction);
                         Destroy(hit.transform.gameObject);
-
+                        stone = false;
                     }
                     lineRenderer.SetPosition(1, hit.point);
 
@@ -262,6 +263,7 @@ public class riMovement : MonoBehaviour
                     if (stone)
                     {
                         Push(direction);
+                        stone = false;
                     }
                     lineRenderer.SetPosition(1, hit.point);
                 }
@@ -270,7 +272,6 @@ public class riMovement : MonoBehaviour
                 }
             }
         }
-        stone = false;
 
         endVFX.transform.position = lineRenderer.GetPosition(1);
 
@@ -291,7 +292,10 @@ public class riMovement : MonoBehaviour
 
     void Push(Vector2 direction)
     {
-        rb.MovePosition((direction * -1f).normalized * pushForce+ rb.position);
+        if (!isGround())
+        {
+            rb.MovePosition((direction * -1f).normalized * pushForce+ rb.position);
+        }
         stone = false;
     }
 
