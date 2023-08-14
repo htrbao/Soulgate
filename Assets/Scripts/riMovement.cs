@@ -250,15 +250,20 @@ public class riMovement : MonoBehaviour
                 {
                     if (stone)
                     {
-                        Debug.Log(rb.position);
-                        rb.MovePosition((direction * pushForce * -1f).normalized + rb.position);
-                        Debug.Log((direction * pushForce * -1f).normalized + rb.position);
-                        stone = false;
+                        Push(direction);
                         Destroy(hit.transform.gameObject);
 
                     }
                     lineRenderer.SetPosition(1, hit.point);
 
+                }
+                else if (hit.collider.gameObject.tag == "PushGround")
+                {
+                    if (stone)
+                    {
+                        Push(direction);
+                    }
+                    lineRenderer.SetPosition(1, hit.point);
                 }
                 else{
                     lineRenderer.SetPosition(1, hit.point);
@@ -282,6 +287,12 @@ public class riMovement : MonoBehaviour
             particles[i].Stop();
         }
         cooldown = cooldownTime;
+    }
+
+    void Push(Vector2 direction)
+    {
+        rb.MovePosition((direction * -1f).normalized * pushForce+ rb.position);
+        stone = false;
     }
 
     void FillLists()
