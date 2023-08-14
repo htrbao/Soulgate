@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class riMovement : MonoBehaviour
 {
@@ -26,10 +27,9 @@ public class riMovement : MonoBehaviour
     public GameObject startVFX;
     public GameObject endVFX;
 
-    private float cooldown = 0f;
 
     private float stoneTime = 0.5f;
-    public float cooldownTime = -2f;
+
     public float firingTime = 2.0f;
     private float countFiringTime = 2.0f;
 
@@ -79,33 +79,30 @@ public class riMovement : MonoBehaviour
         {
             ChangeGravity();
         }
-
-        if (cooldown >= 0)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                EnableLaser();
-                
-            }
-            if (Input.GetButton("Fire1"))
-            {
-                countFiringTime -= Time.deltaTime; 
-                UpdateLaser();
-            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
-            if (countFiringTime <= 0.0f && firing)
-            {
-                DisableLaser();
-            }
-            if (Input.GetButtonUp("Fire1"))
-            {
-                DisableLaser();
-            }
-        }
-        else
+        if (Input.GetButtonDown("Fire1"))
         {
-            cooldown += Time.deltaTime;
+            EnableLaser();
         }
+        if (Input.GetButton("Fire1"))
+        {
+            countFiringTime -= Time.deltaTime; 
+            UpdateLaser();
+        }
+
+        if (countFiringTime <= 0.0f && firing)
+        {
+            DisableLaser();
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            DisableLaser();
+        }
+       
         //else if (Input.GetKeyDown(KeyCode.L))
         //{
         //    Debug.Log("HEHE");
@@ -218,6 +215,7 @@ public class riMovement : MonoBehaviour
 
     void UpdateLaser()
     {
+        stone = false;
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0f;
 
@@ -287,7 +285,6 @@ public class riMovement : MonoBehaviour
         {
             particles[i].Stop();
         }
-        cooldown = cooldownTime;
     }
 
     void Push(Vector2 direction)
