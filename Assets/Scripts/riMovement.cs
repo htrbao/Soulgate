@@ -41,6 +41,7 @@ public class riMovement : MonoBehaviour
 
 
     private bool stone = false;
+    private bool swap = false;
 
     private List<ParticleSystem> particles = new List<ParticleSystem>();
 
@@ -218,6 +219,7 @@ public class riMovement : MonoBehaviour
 
     void UpdateLaser()
     {
+        swap = false;
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0f;
 
@@ -247,8 +249,27 @@ public class riMovement : MonoBehaviour
                         Destroy(hit.transform.gameObject);
                     }
                 }
+                else if (hit.collider.isTrigger && hit.collider.gameObject.tag == "SwapStone")
+                {
+                    stoneTime -= Time.deltaTime;
+                    if (stoneTime < 0f)
+                    {
+                        swap = true;
+                        stoneTime = 0.5f;
+                        Destroy(hit.transform.gameObject);
+                    }
+                }
                 else if (hit.collider.gameObject.tag == "PushStone")
                 {
+                    Debug.Log(swap);
+                    if (swap)
+                    {
+                        Vector3 PushStonePosition = hit.collider.gameObject.transform.position;
+                        Debug.Log(PushStonePosition);
+                        hit.collider.gameObject.transform.position = new Vector3(rb.position.x, rb.position.y);
+                        transform.position = PushStonePosition;
+                        swap = false;
+                    }
                     if (stone)
                     {
                         Push(direction);
@@ -256,7 +277,6 @@ public class riMovement : MonoBehaviour
                         stone = false;
                     }
                     lineRenderer.SetPosition(1, hit.point);
-
                 }
                 else if (hit.collider.gameObject.tag == "PushGround")
                 {
@@ -271,26 +291,6 @@ public class riMovement : MonoBehaviour
                     lineRenderer.SetPosition(1, hit.point);
                 }
                 // FOR SWAPING
-                if (hit.collider.isTrigger && hit.collider.gameObject.tag == "SwapStone")
-                {
-                    stoneTime -= Time.deltaTime;
-                    if (stoneTime < 0f)
-                    {
-                        stone = true;
-                        stoneTime = 0.5f;
-                        Destroy(hit.transform.gameObject);
-                    }
-                }
-                else if (hit.collider.gameObject.tag == "PushStone")
-                {
-                    if (stone)
-                    {
-                        Vector3 PushStonePosition = hit.collider.gameObject.transform.position;
-                        hit.collider.gameObject.transform.position = new Vector3(rb.position.x, 4.4f);
-                        rb.transform.position = PushStonePosition;
-                    }
-                    lineRenderer.SetPosition(1, hit.point);
-                }
             }
         }
 
