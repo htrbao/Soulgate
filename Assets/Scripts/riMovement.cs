@@ -254,6 +254,8 @@ public class riMovement : MonoBehaviour
                         rb.MovePosition((direction * pushForce * -1f).normalized + rb.position);
                         Debug.Log((direction * pushForce * -1f).normalized + rb.position);
                         stone = false;
+                        Destroy(hit.transform.gameObject);
+
                     }
                     lineRenderer.SetPosition(1, hit.point);
 
