@@ -10,13 +10,21 @@ public class Laser : MonoBehaviour
     public GameObject startVFX;
     public GameObject endVFX;
     public GameObject character;
+    private Rigidbody2D rb;
+
     public float targetTime = 3.0f;
+    private float stoneTime = 0.5f;
+    // private float forceTime = 1f;
+
+    public float height = 1f;
+    private bool stone = false;
     private Quaternion rotation;
     private List<ParticleSystem> particles = new List<ParticleSystem>();
     
     // Start is called before the first frame update
     void Start()
     {
+        rb = character.GetComponent<Rigidbody2D>();
         FillLists();
         DisableLaser();
     }
@@ -43,7 +51,7 @@ public class Laser : MonoBehaviour
         {
             DisableLaser();
         }
-        // RotateToMouse();
+
     }
 
     void EnableLaser()
@@ -68,15 +76,39 @@ public class Laser : MonoBehaviour
         startVFX.transform.position = firePoint.position;
         int layerMask = ~LayerMask.GetMask("Player");
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position,direction.normalized,direction.magnitude, layerMask);
+
+
         for (int i = 0; i < hits.Length; i++)
         {
             RaycastHit2D hit = hits[i];
 
-            if (hit && hit.collider.isTrigger == false)
+            if (hit)
             {
-                lineRenderer.SetPosition(1, hit.point);
+                targetTime = 3.0f;
+                if (hit.collider.isTrigger)
+                {
+                    stoneTime -= Time.deltaTime;
+                    if (stoneTime < 0f)
+                    {
+                        stone = true;
+                        stoneTime = 0.5f;
+                        Destroy(hit.transform.gameObject);
+                    }
+                }
+                else
+                {
+                    if (stone)
+                    {
+                        Debug.Log(rb.position);
+                        rb.MovePosition((direction * height * -1f).normalized + rb.position);
+                        Debug.Log(direction.normalized * height * -1f+ rb.position);
+                        stone = false;
+                    }
+                    lineRenderer.SetPosition(1, hit.point);
+                }
             }
         }
+        stone = false;
 
         endVFX.transform.position = lineRenderer.GetPosition(1);
 
@@ -90,14 +122,6 @@ public class Laser : MonoBehaviour
             particles[i].Stop();
         }
     }
-
-    // void RotateToMouse()
-    // {
-    //     Vector2 direction = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-    //     float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-    //     rotation.eulerAngles = new Vector3(0,0,angle);
-    //     transform.rotation = rotation;
-    // }
 
     void FillLists()
     {
