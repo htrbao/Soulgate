@@ -17,7 +17,7 @@ This is project in 3D Visualization and Game Development (CS427), VNU-HCMUS.
 You just need to press the scroll keys: `A`; `W`; `S`; `D`; to make your character move `left`, `up`, `right`, `down`.
 Hold `left-mouse` to use Laser for interacting with Runes.
 - Power Rune;
-- Space Rune;
+- Space Rune.
 
 ## Member
 
