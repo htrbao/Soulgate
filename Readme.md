@@ -26,5 +26,5 @@ Hold `left-mouse` to use Laser for interacting with Runes.
 | Nguyễn Hồ Trường Sơn | 20125112  |
 
 ## Thanks for
-- <a href="https://itch.io/game-assets" title="Itch.io">
+- <a href="https://itch.io/game-assets" title="Itch.io">Itch.io Asset</a>
 - <a href="https://mayragandra.itch.io/freeambientmusic" title="Zapsplat">Itch.io - Free Ambient Music - mayragandra</a>
