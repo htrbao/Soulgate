@@ -419,7 +419,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -764,16 +764,16 @@ Tilemap:
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 10118270f210c4fc98d24168ce5b715e, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 1925123404, guid: eccc5f4f732c24973887d68aa15d6849, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 3
     m_Data: {fileID: -1658416062, guid: eccc5f4f732c24973887d68aa15d6849, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -282703680, guid: eccc5f4f732c24973887d68aa15d6849, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -150138882, guid: eccc5f4f732c24973887d68aa15d6849, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1925123404, guid: eccc5f4f732c24973887d68aa15d6849, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 108303164, guid: eccc5f4f732c24973887d68aa15d6849, type: 3}
   - m_RefCount: 6
@@ -1482,7 +1482,8 @@ GameObject:
   - component: {fileID: 1053831067}
   - component: {fileID: 1053831069}
   - component: {fileID: 1053831068}
-  m_Layer: 0
+  - component: {fileID: 1053831071}
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1600,13 +1601,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053831066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.81, y: 5.76, z: -10}
+  m_LocalPosition: {x: 4.81, y: 5.76, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1053831071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053831066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22b0d1c59e01431da565bc5562dc888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1295991002}
 --- !u!1 &1070277579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,6 +1977,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1295991002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7666222804811240152, guid: 439cf996cfbb4477ca82769ad903b1f3, type: 3}
+  m_PrefabInstance: {fileID: 5055847417136133422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1310600544
 PrefabInstance:
   m_ObjectHideFlags: 0

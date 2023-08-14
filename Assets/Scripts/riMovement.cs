@@ -270,6 +270,27 @@ public class riMovement : MonoBehaviour
                 else{
                     lineRenderer.SetPosition(1, hit.point);
                 }
+                // FOR SWAPING
+                if (hit.collider.isTrigger && hit.collider.gameObject.tag == "SwapStone")
+                {
+                    stoneTime -= Time.deltaTime;
+                    if (stoneTime < 0f)
+                    {
+                        stone = true;
+                        stoneTime = 0.5f;
+                        Destroy(hit.transform.gameObject);
+                    }
+                }
+                else if (hit.collider.gameObject.tag == "PushStone")
+                {
+                    if (stone)
+                    {
+                        Vector3 PushStonePosition = hit.collider.gameObject.transform.position;
+                        hit.collider.gameObject.transform.position = new Vector3(rb.position.x, 4.4f);
+                        rb.transform.position = PushStonePosition;
+                    }
+                    lineRenderer.SetPosition(1, hit.point);
+                }
             }
         }
 
